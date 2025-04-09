@@ -1,0 +1,56 @@
+body {
+  background-color: azure;
+  font-family: monospace !important;
+  font-size: 62.5%;
+  padding-bottom: 8%;
+}
+
+.accordion-wrapper {
+  display: grid;
+  grid-template-columns: [content-start] minmax(400px, 0.75fr) [content-end];
+  gap: 1rem;
+  place-content: center;
+}
+
+ul li {
+  margin-bottom: 16px;
+}
+
+ol {
+  margin-bottom: 1.6rem;
+  list-style-type: disc;
+  li {
+    margin-bottom: 1rem;
+  }
+}
+
+a {
+  /* font-size: 1.1rem; */
+}
+
+hr {
+  border-top: 1px solid lightgray;
+  color: transparent;
+}
+
+::selection {
+  background-color: orangered;
+  color: black;
+}
+
+.git-term {
+  font-weight: bold;
+  border-bottom: 1px dashed black;
+}
+
+/* fw-accordion::part(.hydrated) {
+  color: red;
+  font-size: 20px;
+  opacity: 0.2;
+} */
+
+/* fw-pill::slotted(text) {
+  color: red;
+  font-size: 20px;
+  opacity: 0.2;
+} */

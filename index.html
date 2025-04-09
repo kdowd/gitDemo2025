@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>+++ Git Demo +++</title>
+    <link rel="shortcut icon" href="git.svg">
+
+    <script type="module"
+        src="https://cdn.jsdelivr.net/npm/@freshworks/crayons@v4/dist/crayons/crayons.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@freshworks/crayons@v4/dist/crayons/crayons.js"></script>
+
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <h1 style="background-color: cadetblue; padding: 1rem; border-radius: 12px">
+        <img width="100" src="git.svg" alt="st marys logo" />
+        <img width="60" src="git-letters.svg" alt="st marys logo" />
+    </h1>
+    <div class="page-wrapper">
+        <div class="accordion-wrapper">
+            <fw-accordion>
+                <fw-accordion-title>
+                    <fw-icon name="minus" size="14" slot="expanded-icon"></fw-icon>
+                    <fw-icon name="plus" size="14" slot="collapsed-icon"></fw-icon>
+                    <fw-pill color=blue>
+                        <fw-icon name="add-contact" slot="icon"></fw-icon>
+                        Baseline:
+                    </fw-pill>
+                </fw-accordion-title>
+                <fw-accordion-body>
+                    <p>
+
+                        Log in at GitHub.com. Make sure your local Git instance has your details:
+                    </p>
+                    <ol>
+                        <li>In the CLI (Command Line Interface):</li>
+                        <li>git config user.name - should return you name as set on GitHub</li>
+                        <li>git config user.email - email as set on GitHub</li>
+
+                    </ol>
+                    <hr />
+                    <p>
+                        To set/reset, in the CLI:
+                    <ol>
+                        <li>git config --global user.name "Your Name"</li>
+                        <li>git config --global user.email "your.email@example.com"</li>
+                    </ol>
+
+
+
+                    </p>
+                    <p>
+                        Many Git tutorials use GitBash, a free download:<br />
+                        <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a>
+
+                    </p>
+
+                </fw-accordion-body>
+            </fw-accordion>
+
+            <fw-accordion>
+                <fw-accordion-title>
+                    <fw-icon name="minus" size="14" slot="expanded-icon"></fw-icon>
+                    <fw-icon name="plus" size="14" slot="collapsed-icon"></fw-icon>
+                    <fw-pill color=blue>
+                        <fw-icon name="add-contact" slot="icon"></fw-icon>
+                        The Basics: stuff you must know...
+                    </fw-pill>
+                </fw-accordion-title>
+                <fw-accordion-body>
+
+                    <ol>
+                        <li>git init</li>
+                        <li>git clone</li>
+                        <li>git status</li>
+                        <li>git add .</li>
+                        <li>git commit -m "blah blah"</li>
+                        <li>git push</li>
+                        <li>git log --oneline</li>
+                        <li>basic command line ( cd, cd .., ls -la, clear )</li>
+                    </ol>
+                    <p>Lets cover <span class="git-term">git init</span> in a
+                        bit more detail. </p>
+                    <p>What happens if you delete the <span class="git-term">.git</span> folder in your
+                        project ?</p>
+
+                </fw-accordion-body>
+            </fw-accordion>
+
+            <fw-accordion>
+                <fw-accordion-title>
+                    <fw-icon name="minus" size="14" slot="expanded-icon"></fw-icon>
+                    <fw-icon name="plus" size="14" slot="collapsed-icon"></fw-icon>
+                    <fw-pill color=blue>
+                        <fw-icon name="add-contact" slot="icon"></fw-icon>
+                        What is a commit hash ?
+                    </fw-pill>
+                </fw-accordion-title>
+                <fw-accordion-body>
+
+                    <p>A unique id (40 chars) for each commit.</p>
+                    <p>It contains a date stamp within and other stuff too.</p>
+                    <p>Use <span class="git-term">git log --oneline</span> to reason about whats going on.</p>
+                    <p>Use <span class="git-term">git log --oneline --graph --decorate</span> for the full effect.</p>
+                    <p>What happens to my commit history when I create a new branch ?</p>
+
+                </fw-accordion-body>
+            </fw-accordion>
+
+            <fw-accordion>
+                <fw-accordion-title>
+                    <fw-icon name="minus" size="14" slot="expanded-icon"></fw-icon>
+                    <fw-icon name="plus" size="14" slot="collapsed-icon"></fw-icon>
+                    <fw-pill color=blue>
+                        <fw-icon name="add-note" slot="icon"></fw-icon>
+                        Where is Origin?
+                    </fw-pill>
+                </fw-accordion-title>
+                <fw-accordion-body>
+                    <p>It's on GitHub but you'll need to create the repository first. Also known as "remotes"</p>
+                    <p>Lets create an ordinary project in VSCode ( html, python, c++, your choice.)</p>
+                    <ol>
+                        <li>
+                            Do some work, create some files and folders.
+                        </li>
+                        <li>You decide you want to start saving your work.
+
+                            <ol>
+                                <li>git init</li>
+                                <li>git add .</li>
+                                <li>git commit -m "day zero!"</li>
+                            </ol>
+                        </li>
+                        <li>The project is still local: <span class="git-term">git remote show origin</span>
+                        </li>
+                        <li>
+                            Publish with VSCode and re-run: <span class="git-term">git remote show origin</span>
+                        </li>
+                        <li>
+                            If the above command is working VSCode will have set-up the tracking for you. Use <span
+                                class="git-term">git push</span> from now on.</span>
+                        </li>
+                    </ol>
+
+
+                </fw-accordion-body>
+            </fw-accordion>
+
+            <fw-accordion expanded>
+                <fw-accordion-title>
+                    <fw-icon name="minus" size="14" slot="expanded-icon"></fw-icon>
+                    <fw-icon name="plus" size="14" slot="collapsed-icon"></fw-icon>
+                    <fw-pill color=blue>
+                        <fw-icon name="add-contact" slot="icon"></fw-icon>
+                        Branching: Your Safe Space
+                    </fw-pill>
+                </fw-accordion-title>
+                <fw-accordion-body>
+                    <ol>
+                        <li>Branching is cheap and easy, do it a lot.</li>
+                        <li>CREATE: git branch login-branch </li>
+                        <li>DEBUG: git branch -l , git branch -r, git branch -a</li>
+                        <li>MOVE TO: git switch login-branch </li>
+                        <li>SET UP TRACKING: git push --set-upstream origin login-branch</li>
+                        <li>DELETION : git branch -d login-branch , git branch -d --remote origin login-branch</li>
+                    </ol>
+
+                </fw-accordion-body>
+            </fw-accordion>
+
+
+
+            <fw-accordion expanded>
+                <fw-accordion-title>
+                    <fw-icon name="minus" size="14" slot="expanded-icon"></fw-icon>
+                    <fw-icon name="plus" size="14" slot="collapsed-icon"></fw-icon>
+                    <fw-pill color=blue>
+                        <fw-icon name="add-note" slot="icon"></fw-icon>
+                        Merging with a conflict(s)
+                    </fw-pill>
+                </fw-accordion-title>
+                <fw-accordion-body>
+                    <ol>
+                        <li>
+                            <p>After you have done work on your own branch you'll want to merge back to the main branch
+                            </p>
+                        </li>
+                        <li>
+                            <p>In a professional setting you'd create a "Pull request". Collaborators would preview,
+                                ammend and
+                                merge to main.
+                            </p>
+                        </li>
+                        <li>
+                            You must merge into the branch you are on. So go to main and update from Origin, for the
+                            latest copy.
+                            Go back to your dev branch and merge into that. Its safer - your safe space.
+
+                        </li>
+                        <li>
+                            Once the above is done and conficts resolved updating main and then origin should go well
+                            for you.
+
+                        </li>
+                    </ol>
+
+
+
+                </fw-accordion-body>
+            </fw-accordion>
+
+            <fw-accordion>
+                <fw-accordion-title>
+                    <fw-icon name="minus" size="14" slot="expanded-icon"></fw-icon>
+                    <fw-icon name="plus" size="14" slot="collapsed-icon"></fw-icon>
+                    <fw-pill color=red>
+                        <fw-icon name="add-note" slot="icon"></fw-icon>
+                        Fetch or Pull
+                    </fw-pill>
+                </fw-accordion-title>
+                <fw-accordion-body>
+                    <ol>
+                        <li>
+                            <p>Pull is a fetch and then a merge, combined. It doesn't give you a chance to see what's
+                                coming
+                                and bail-out. Also it does not allow you to rebase if thats your preferred option.</p>
+                        </li>
+                        <li>
+                            <p>Fetch will update your local and allow you to perfrom a <span class="git-term">git diff
+                                    origin main</span> so you can have a sneek peek.</p>
+                        </li>
+                    </ol>
+
+
+                </fw-accordion-body>
+            </fw-accordion>
+
+            <!-- end of main pages code -->
+
+
+
+
+
+
+            <!-- 2 col layout -->
+            <fw-accordion>
+                <fw-accordion-title>
+                    <fw-icon name="minus" size="14" slot="expanded-icon"></fw-icon>
+                    <fw-icon name="plus" size="14" slot="collapsed-icon"></fw-icon>
+                    <fw-pill color=blue>
+                        <fw-icon name="add-note" slot="icon"></fw-icon>
+                        Two Column Layout:
+                    </fw-pill>
+                </fw-accordion-title>
+                <fw-accordion-body>
+                    <h4>Paste the following between the &lt;main&gt; tags.
+                    </h4>
+                    <xmp>
+                        <style>
+                            .a-grid {
+                                padding-top: 40px;
+
+                                display: grid;
+
+                                grid-template-columns: 1fr 1fr;
+
+                                place-items: center;
+
+                                gap: 30px;
+
+                                img {
+                                    object-fit: cover;
+                                    height: 200px;
+                                    aspect-ratio: 16 / 9;
+                                }
+                            }
+
+                            h1 {
+                                text-align: center;
+                            }
+                        </style>
+                        <h1>My Nice grid of things</h1>
+
+
+                        <div class="a-grid">
+                            <div>
+                                <img src="https://place-hold.it/320x200/333/ff0000/" alt="image of..." />
+                            </div>
+
+                            <div>
+                                <img src="https://place-hold.it/300x160/333/ff0000/" alt="image of..." />
+                            </div>
+                            <div>
+                                <img src="https://place-hold.it/400x260/333/ff0000/" alt="image of..." />
+                            </div>
+                            <div>
+                                <img src="https://place-hold.it/360x200/333/ff0000/" alt="image of..." />
+                            </div>
+
+                            <div>
+                                <img src="https://place-hold.it/300x160/333/ff0000/" alt="image of..." />
+                            </div>
+                            <div>
+                                <img src="https://place-hold.it/400x260/333/ff0000/" alt="image of..." />
+                            </div>
+                            <div>
+                                <img src="https://place-hold.it/300x200/333/ff0000/" alt="image of..." />
+                            </div>
+
+                            <div>
+                                <img src="https://place-hold.it/360x160/333/ff0000/" alt="image of..." />
+                            </div>
+                            <div>
+                                <img src="https://place-hold.it/400x260/333/ff0000/" alt="image of..." />
+                            </div>
+                        </div>
+                    </xmp>
+
+                </fw-accordion-body>
+            </fw-accordion>
+
+
+
+            <!-- start slideshow -->
+
+            <fw-accordion>
+                <fw-accordion-title>
+                    <fw-icon name="minus" size="14" slot="expanded-icon"></fw-icon>
+                    <fw-icon name="plus" size="14" slot="collapsed-icon"></fw-icon>
+                    <fw-pill color=blue>
+                        <fw-icon name="add-note" slot="icon"></fw-icon>
+                        Resources:
+                    </fw-pill>
+                </fw-accordion-title>
+                <fw-accordion-body>
+
+                    <p>There's a lot on YouTube but often over-complex</p>
+                    <h5>Know any good resources ? Let me know.</h5>
+                    <ol>
+                        <li>
+                            <p>Easy Cheat Sheet:
+                            <ol>
+                                <li><a href="https://training.github.com/downloads/github-git-cheat-sheet.pdf">GitHub
+                                        Cheat Sheet</a>
+                                </li>
+                            </ol>
+                            </p>
+                        </li>
+                        <li>
+                            <p>Cameron MacKenzie:
+                            <ol>
+                                <li> <a
+                                        href="https://www.youtube.com/watch?v=znRVAvQy5FU&list=PL_RrEj88onS8-8OfcYMuLXnTfnSIGf37k">Cameron
+                                        MacKenzie YT
+                                    </a></li>
+                                <li> <a
+                                        href="https://www.youtube.com/watch?v=GsLNBIW1R-M&list=PL_RrEj88onS8XTeD0JDpNaL6kBUSt1ZJ7">Shorts</a>
+                                </li>
+                            </ol>
+
+
+
+                            </p>
+                        </li>
+                        <li>
+                            <p>The Modern Coder: good explanation and visuals
+                            <ol>
+                                <li> <a
+                                        href="https://www.youtube.com/watch?v=k0DWmw1nYnM&list=PLfU9XN7w4tFzW200TaCP1W9RTE8jRSHU5">
+                                        The Modern Coder YT</a></li>
+                            </ol>
+
+                            </p>
+                        </li>
+                    </ol>
+
+
+
+
+
+
+                </fw-accordion-body>
+            </fw-accordion>
+
+
+            <!-- end slideshow -->
+
+
+
+
+        </div>
+    </div>
+
+</body>
+
+</html>
